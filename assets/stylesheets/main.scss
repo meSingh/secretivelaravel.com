@@ -1,0 +1,26 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+
+/* Base font family */
+$base-font-family: "Montserrat", sans-serif;
+
+/* Other font families */
+$headline-font-family: "Fira Sans", sans-serif;
+
+// Theme skin
+@import "basically-basic/themes/{{ site.data.theme.skin | default: 'default' }}";
+
+@import "basically-basic";
+
+
+*:focus {
+    box-shadow: none;
+}
+
+.intro-title {
+  color: tint($text-color, 20%);
+}
