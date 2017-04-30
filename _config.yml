@@ -1,0 +1,49 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Secretive Laravel
+email: im@msingh.me
+logo: assets/images/logo_icon.png
+description: > # this means to ignore newlines until "baseurl:"
+  Secretive Laravel is built to introduce new laravel developers as well as 
+  Experenced developers to the hidden (secret) features of Laravel. It 
+  uncovers deepest hidden features that can be extremely helpful. 
+baseurl: "" # the subpath of your site, e.g. /blog
+copyright: | 
+  Copyright &copy; 2017 <a href="https://laratisans.com/" target="_blank">Laratisans</a>.
+url: https://www.secretivelaravel.com # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: Laratisans
+github_username:  Laratisans
+future: false
+
+host: localhost
+port: 5000
+permalink: /:categories/:title
+
+# Build settings
+markdown: kramdown
+# theme: jekyll-theme-basically-basic
+gems:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
+paginate: 5  # amount of posts to show per page
+paginate_path: /page:num/
+author:
+  name: Mandeep Singh
+  twitter: meSingh
+  picture: /assets/images/johndoe.png
+
