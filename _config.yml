@@ -26,7 +26,7 @@ copyright: |
 url: https://www.secretivelaravel.com # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: Laratisans
 github_username:  Laratisans
-future: false
+# future: false
 
 host: localhost
 port: 5000
@@ -40,8 +40,8 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
-paginate: 5  # amount of posts to show per page
-paginate_path: /page:num/
+# paginate: 'nil'  # amount of posts to show per page
+# paginate_path: /page:num/
 author:
   name: Mandeep Singh
   twitter: meSingh
