@@ -2,7 +2,8 @@
 layout: post
 title:  "Tap, Tap, Tap"
 date:   2017-04-30 16:36:45 +0530
-categories: helpers
+categories: 
+  - helpers
 
 # optional alternate title to replace page.title at the top of the page
 #alt_title: "Basically Basic"

@@ -20,9 +20,17 @@
       {% if page.date %}
         {% include author %}
         <p class="entry-meta">
-          {% if author_name %}<span class="byline-item">{{ author_name | prepend: 'by ' }}</span>{% endif %}<span class="byline-item"><span class="icon">{% include icon-calendar.svg %}</span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></span>{% if page.read_time %} <span class="byline-item"><span class="icon">{% include icon-stopwatch.svg %}</span>{% capture read_time %}{% include read-time.html %}{% endcapture %}{{ read_time | strip }}</span>{% endif %}
+          {% if author_name %}<span class="byline-item">{{ author_name | prepend: 'by ' }}</span>{% endif %}{% if page.categories %} <span class="byline-item"><span class="icon icon--category">{% include icon-category.svg %}</span>{% for category in page.categories %}<a href="{{ site.url }}/categories/#{{ category | slugify }}">{{ category | capitalize }}</a>&nbsp;&nbsp;&nbsp;{% endfor %}</span>{% endif %}<span class="byline-item"><span class="icon">{% include icon-calendar.svg %}</span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></span>{% if page.read_time %} <span class="byline-item"><span class="icon">{% include icon-stopwatch.svg %}</span>{% capture read_time %}{% include read-time.html %}{% endcapture %}{{ read_time | strip }}</span>{% endif %}
         </p>
       {% endif %}
+
+       {% if page.tags %}
+       <p style="margin-bottom: 0;">
+              <a href="{{ site.url }}/tags/" style="position: relative;top: -1px;"><span class="icon icon--tags">{% include icon-tags.svg %}</span></a>&nbsp;
+          {% for tag in page.tags %}<a href="{{ site.url }}/tags/#{{ tag | slugify }}">{{ tag | capitalize | append: "," }}</a>&nbsp;&nbsp;{% endfor %}
+
+          </p>
+        {% endif %}
 
 
         <div class="intro-more">
