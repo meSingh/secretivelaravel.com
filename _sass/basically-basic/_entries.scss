@@ -148,7 +148,14 @@
 }
 
 /* Read more link */
-.more-link {
+a.more-link {
+  font-size: 75%;
+  font-weight: bold;
+  text-decoration: none;
+  color: $accent-color;
+}
+
+.tags-link {
   font-size: 75%;
   font-weight: bold;
   text-decoration: none;

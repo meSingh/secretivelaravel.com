@@ -37,10 +37,10 @@
           <a href="{{ post.url | relative_url }}" class="more-link">{{ site.data.theme.t.read_more | default: 'Read More' }} <span class="icon icon--arrow-right">{% include icon-arrow-right.svg %}</span></a>
           {% if post.tags %}
           <span style="float:right;">
-              <a href="{{ site.url }}/tags/" class="more-link" style="position: relative;top: -1px;">
+              <a href="{{ site.url }}/tags/" class="tags-link" style="position: relative;top: -1px;">
                   <span class="icon icon--tags">{% include icon-tags.svg %}</span>
               </a>&nbsp;
-          {% for tag in post.tags %}<a href="{{ site.url }}/tags/#{{ tag | slugify }}" class="more-link">{{ tag | capitalize | append: "," }}</a>&nbsp;&nbsp;{% endfor %}
+          {% for tag in post.tags %}<a href="{{ site.url }}/tags/#{{ tag | slugify }}" class="tags-link">{{ tag | capitalize | append: "," }}</a>&nbsp;&nbsp;{% endfor %}
           </span>
           {% endif %}
       </p>

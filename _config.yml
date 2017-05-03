@@ -22,7 +22,7 @@ description: > # this means to ignore newlines until "baseurl:"
   uncovers deepest hidden features that can be extremely helpful. 
 baseurl: "" # the subpath of your site, e.g. /blog
 copyright: | 
-  Copyright &copy; 2017 <a href="https://laratisans.com/" target="_blank">Laratisans</a>.
+  Copyright &copy; 2017 <a href="https://laratisans.com/" target="_blank">Laratisans</a>. All rights reserved.
 url: https://www.secretivelaravel.com # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: Laratisans
 github_username:  Laratisans

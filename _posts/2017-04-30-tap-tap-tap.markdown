@@ -25,22 +25,40 @@ tags:
 #read_time: false
 #comments: true  # disable comments on this post
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+Tap might be the most simplest helper of Laravel yet if used more often can help you write a more cleaner and readable code. Quite offen I find myself writing long strings of code just to modify a variable in some form. Honestly, it always end the same way, the dirty way. 
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+What ```tap()``` do's is, it takes a variable as it's first argument and then passes it through the callback given as 2nd argument. A typical example of tap, as used by Laravel is: 
 
-Jekyll also offers powerful support for code snippets:
+{% highlight php %}
+<?php
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
+public function create(array $attributes = [])
+{
+    return tap($this->newModelInstance($attributes), function ($instance) {
+        $instance->save();
+    });
+}
 {% endhighlight %}
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+[Just recently][tap-code], Tylor has improved this tiny little helper to support shorten ```tap()``` calls even more. He call's it [HigherOrderTapProxy][tap-proxy]. It lets you pass an object to tap and then tap it's methods to return the object itself, for e.g. we can use tap to update a model record and return the object itself instead of a boolean value. 
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+{% highlight php %}
+<?php
+
+return tap($user)->update([
+    'name'  => $name,
+    'age'   => $age,
+]);
+
+{% endhighlight %}
+
+[Tylor wrote a post][tap-tap-tap] on this tiny little helper and said:
+> While ```tap``` is a very simple helper, I find it often lets me write terse, one-line operations that would normally require temporary variables or additional lines.
+
+
+
+PS: I know, I copied title from original Taylor's post but after reading it, I just coudn't help it. It stuck in my mind. :P
+
+[tap-code]: https://github.com/laravel/framework/blob/master/src/Illuminate/Support/helpers.php#L877
+[tap-proxy]: https://github.com/laravel/framework/blob/master/src/Illuminate/Support/HigherOrderTapProxy.php
+[tap-tap-tap]: https://medium.com/@taylorotwell/tap-tap-tap-1fc6fc1f93a6

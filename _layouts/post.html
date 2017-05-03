@@ -5,16 +5,24 @@ layout: default
 {% include page-intro.html %}
 
 <main id="main" class="page-content" aria-label="Content">
-  <div class="inner">
-    <article class="entry-wrap">
-      <div class="entry-content">
-        {{ content }}
-      </div>
-      {% if site.disqus.shortname %}
-        {% include disqus_comments.html %}
-      {% endif %}
-    </article>
+	<div class="inner">
+	<article class="entry-wrap">
+		<div class="entry-content">
+			{{ content }}
 
-    {% include footer.html %}
-  </div>
+			{% if page.tags %}
+				<p style="margin-bottom: 0;">
+					<a href="{{ site.url }}/tags/" style="position: relative;top: -1px;"><span class="icon icon--tags">{% include icon-tags.svg %}</span></a>&nbsp;{% for tag in page.tags %}<a href="{{ site.url }}/tags/#{{ tag | slugify }}">{{ tag | capitalize | append: "," }}</a>&nbsp;&nbsp;{% endfor %}
+				</p>
+			{% endif %}
+		</div>
+
+			{% if site.disqus.shortname %}
+				{% include disqus_comments.html %}
+			{% endif %}
+
+		</article>
+
+		{% include footer.html %}
+	</div>
 </main>

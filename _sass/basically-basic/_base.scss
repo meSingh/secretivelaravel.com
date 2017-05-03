@@ -9,8 +9,9 @@ html {
 body {
   display: -ms-flexbox;
   display: flex;
-  background: $background-color;
+  background: $topbar-color;
   color: $text-color;
+  padding-top: 10px;
 }
 
 blockquote,
@@ -115,4 +116,8 @@ a {
   border-color: $accent-color;
   outline: none;
   box-shadow: 0 0 10px $accent-color;
+}
+
+p {
+  color: $alt-text-color;
 }

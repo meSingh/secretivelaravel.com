@@ -10,6 +10,8 @@
   max-width: $sidebar-width;
   height: 100%;
   z-index: 50;
+  background: $topbar-color;
+  padding-top: 10px;
 
   @include breakpoint($large) {
     max-width: (1.5 * $sidebar-width);
