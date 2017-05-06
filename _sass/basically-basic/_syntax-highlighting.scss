@@ -4,17 +4,32 @@
 
 .highlight {
   background-color: $code-background-color;
-  padding: 2em;
-  margin-left: -1em;
-  padding-left: 1em;
-  margin-right: -1em;
-  padding-right: 1em;
+  padding: 2rem 1rem;
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
 
-  @include breakpoint($medium) {
-    margin-right: -50%;
-    margin-left: -20%;
-    padding-left: 26%;
-  }
+    @include breakpoint($small) {
+      margin-right: -1rem;
+      margin-left: -1rem;
+      padding: 2.5rem 1.5rem;
+    }
+
+    @include breakpoint($medium) {
+      margin-right: -2rem;
+      margin-left: -2rem;
+      padding: 3rem 5rem;
+    }
+
+    @include breakpoint($large) {
+      margin-right: -15rem;
+      margin-left: -3rem;
+      padding: 3rem 7rem;
+    }
+
+    @include breakpoint($xlarge) {
+      margin-right: -25rem;
+      margin-left: -4rem;
+    }
 
   pre {
     width: 100%;
