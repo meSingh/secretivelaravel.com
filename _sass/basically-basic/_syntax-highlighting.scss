@@ -3,12 +3,26 @@
    ========================================================================== */
 
 .highlight {
-  padding: 1em;
   background-color: $code-background-color;
+  padding: 2em;
+  margin-left: -1em;
+  padding-left: 1em;
+  margin-right: -1em;
+  padding-right: 1em;
+
+  @include breakpoint($medium) {
+    margin-right: -50%;
+    margin-left: -20%;
+    padding-left: 26%;
+  }
 
   pre {
     width: 100%;
     margin: 0;
+  }
+
+  code {
+    font-size: 1.2em;
   }
 
   table {
