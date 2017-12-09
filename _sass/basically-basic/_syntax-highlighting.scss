@@ -7,6 +7,8 @@
   padding: 2rem 1rem;
   margin-right: -0.5rem;
   margin-left: -0.5rem;
+  // border-top: 1px solid rgba($border-color, 0.3);
+  box-shadow: 0 0 5px 5px solid rgba($base-color, 1);
 
     @include breakpoint($small) {
       margin-right: -1rem;
@@ -24,6 +26,7 @@
       margin-right: -15rem;
       margin-left: -3rem;
       padding: 3rem 7rem;
+      // box-shadow: 0 0 2px 3px solid rgba($border-color, 0.3);
     }
 
     @include breakpoint($xlarge) {

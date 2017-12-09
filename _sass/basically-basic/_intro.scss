@@ -7,8 +7,8 @@
   padding-top: 2rem;
   padding-bottom: 2rem;
   background: $intro-background-color;
-  border-top: 1px solid $border-color;
-  border-bottom: 1px solid $border-color;
+  border-top: 1px solid rgba($border-color, 0.3);
+  border-bottom: 1px solid rgba($border-color, 0.3);
 }
 
 .intro-image {
